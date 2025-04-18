@@ -1,32 +1,15 @@
 package Java.Intermedio.model;
 
-
-import com.mysql.cj.jdbc.MysqlDataSource;
-
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.StandardOpenOption;
+import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.util.Properties;
 
 public class Banco {
-    public static void main(String[] args) {
-        Properties props = new Properties();
-        try{
-            props.load(Files.newInputStream(Path.of("banco.properties"), StandardOpenOption.READ));
-        }catch(IOException e){
-            throw new RuntimeException(e);
-        }
-        var dataSource = new MysqlDataSource();
-        dataSource.setServerName(props.getProperty("serverName"));
-        dataSource.setPort(Integer.parseInt(props.getProperty("port")));
-        dataSource.setDatabaseName(props.getProperty("databaseName"));
+    private static final String URL = "jdbc:mysql://localhost:3306/banco";
+    private static final String USUARIO = "devuser";
+    private static final String contrasena = "1077723953";
 
-        try(var connection = dataSource.getConnection(props.getProperty("user"), System.getenv("MYSQL_PASS"))) {
-            System.out.println("Success!");
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+    public static Connection getConnection() throws SQLException {
+        return DriverManager.getConnection(URL, USUARIO, contrasena);
     }
 }
