@@ -60,7 +60,7 @@ public class Cajero extends Persona {
         return nuevoCliente;
     }
 
-    private boolean existeCliente(String CC){
+    public static boolean existeCliente(String CC){
         boolean existe = false;
         Connection connection = null;
         PreparedStatement preparedStatement = null;
@@ -92,4 +92,62 @@ public class Cajero extends Persona {
         }
         return existe;
     }
+    public Cliente buscarCliente(String CC){
+        Cliente cliente = null;
+        try(Connection connection = Banco.getConnection()){
+            String sql = "SELECT * FROM clientes WHERE CC = ?";
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1, CC);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if(resultSet.next()){
+                cliente = new Cliente(
+                        resultSet.getString("nombre"),
+                        resultSet.getString("apellido"),
+                        resultSet.getString("correo"),
+                        resultSet.getString("telefono"),
+                        resultSet.getString("CC"),
+                        resultSet.getDate("fechaNacimiento").toLocalDate(),
+                        resultSet.getString("direccion"),
+                        TipoCuenta.valueOf(resultSet.getString("tipoCuenta").toUpperCase()),
+                        resultSet.getString("usuario"),
+                        resultSet.getInt("contraseña")
+                );
+            }
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
+        return cliente;
+    }
+    public String eliminarCliente(String CC){
+        String texto = "";
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        try{
+            connection = Banco.getConnection();
+            String sql = "DELETE FROM clientes WHERE CC = ?";
+            preparedStatement = connection.prepareStatement(sql);
+            int filasAlteradas = preparedStatement.executeUpdate();
+            if(filasAlteradas > 0){
+                texto = "El cliente se ha eliminado con exito";
+            }else{
+                texto = "no se encontro ningun cliente con ese id";
+            }
+        }catch(SQLException e){
+            e.printStackTrace();
+            texto = "Error al eliminar el cliente";
+        }finally{
+            try{
+                if(preparedStatement != null){
+                    preparedStatement.close();
+                }if(connection != null){
+                    connection.close();
+                }
+            }catch(SQLException e){
+                e.printStackTrace();
+            }
+        }
+        return texto;
+    }
+
+
 }
