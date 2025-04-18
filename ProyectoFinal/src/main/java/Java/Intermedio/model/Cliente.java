@@ -13,5 +13,24 @@ public class Cliente extends Persona {
         this.tipoCuenta = tipoCuenta;
         this.transacciones = new ArrayList<>();
     }
+    public String getDireccion() {
+        return direccion;
+    }
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+    public TipoCuenta getTipoCuenta() {
+        return tipoCuenta;
+    }
+    public void setTipoCuenta(TipoCuenta tipoCuenta) {
+        this.tipoCuenta = tipoCuenta;
+    }
+    public ArrayList<Transaccion> getTransacciones() {
+        return transacciones;
+    }
+    public void setTransacciones(ArrayList<Transaccion> transacciones) {
+        this.transacciones = transacciones;
+
+    }
 
 }
