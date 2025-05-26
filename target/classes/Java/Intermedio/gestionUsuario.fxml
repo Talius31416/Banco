@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="507.0" prefWidth="520.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vista.GestionUsuario">
+   <children>
+      <AnchorPane prefHeight="82.0" prefWidth="520.0" style="-fx-background-color: #001D51;">
+         <children>
+            <ImageView fx:id="imgLogo" fitHeight="94.0" fitWidth="113.0" layoutX="39.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@/img/logo_blanco.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="187.0" layoutY="36.0" text="Gestion de Usuarios" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Apple Braille" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Button fx:id="btnCancelarGestion" onAction="#cancelarGestion" layoutX="83.0" layoutY="452.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="366.0" style="-fx-background-color: #AD2A2A;" text="Cancelar Gestion" textFill="WHITE" />
+      <Button fx:id="btnEliminarUsuario" onAction="#eliminarUsuario" layoutX="81.0" layoutY="337.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="366.0" style="-fx-background-color: #001D51;" text="Eliminar Usuario" textFill="WHITE" />
+      <TableView fx:id="TablaDatosUsuarios" layoutX="19.0" layoutY="119.0" prefHeight="200.0" prefWidth="484.0">
+         <columns>
+            <TableColumn fx:id="nombreCol" prefWidth="75.0" text="Nombre" />
+            <TableColumn fx:id="ccCol" prefWidth="99.19136047363281" text="Identificacion" />
+            <TableColumn fx:id="correoCol" prefWidth="121.27919006347656" text="Correo Electronico" />
+         </columns>
+      </TableView>
+      <Button fx:id="btnEditarUsuario" onAction="#editarUsuario" layoutX="81.0" layoutY="375.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="366.0" style="-fx-background-color: #001D51;" text="Editar Usuario" textFill="WHITE" />
+      <Button fx:id="btnAgregaranuevoUsuario"  onAction="#agregarUsuarioNuevo" layoutX="80.0" layoutY="413.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="366.0" style="-fx-background-color: #001D51;" text="Agregar Nuevo Usuario" textFill="WHITE" />
+   </children>
+</AnchorPane>

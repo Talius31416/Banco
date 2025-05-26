@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="847.0" prefWidth="520.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vista.Editarusuario">
+   <children>
+      <AnchorPane layoutY="-1.0" prefHeight="82.0" prefWidth="520.0" style="-fx-background-color: #001D51;">
+         <children>
+            <ImageView fx:id="imgLogo" fitHeight="94.0" fitWidth="113.0" layoutX="39.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@/img/logo_blanco.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="202.0" layoutY="36.0" text="Editar Usuario" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Apple Braille" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Label layoutX="79.0" layoutY="222.0" text="Nombre" />
+      <TextField fx:id="txtNombre" layoutX="79.0" layoutY="239.0" prefHeight="25.0" prefWidth="366.0" promptText="Ingrese su(s) Nombre(s)" />
+      <Label layoutX="79.0" layoutY="275.0" text="Apellido">
+         <font>
+            <Font name="Apple Braille" size="13.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtApellido" layoutX="79.0" layoutY="292.0" prefHeight="25.0" prefWidth="366.0" promptText="Ingrese su(s) Apellido(s)" />
+      <Label layoutX="79.0" layoutY="328.0" text="Correo Electronico">
+         <font>
+            <Font name="Apple Braille" size="13.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtCorreo" layoutX="79.0" layoutY="345.0" prefHeight="25.0" prefWidth="366.0" promptText="Ingrese su correo electrónico" />
+      <Label layoutX="79.0" layoutY="379.0" text="Telefono" />
+      <TextField fx:id="txtTelefono" layoutX="79.0" layoutY="396.0" prefHeight="25.0" prefWidth="366.0" promptText="ingrese su telefóno celular" />
+      <Label layoutX="79.0" layoutY="431.0" text="C.C." />
+      <TextField fx:id="txtCC" layoutX="79.0" layoutY="448.0" prefHeight="25.0" prefWidth="366.0" promptText="Ingrese su documento de identidad" />
+      <Button fx:id="btnEditar" layoutX="76.0" layoutY="751.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="366.0" style="-fx-background-color: #001D51;" text="Editar" textFill="WHITE" onAction="#editarUsuario"/>
+      <Label layoutX="79.0" layoutY="482.0" text="Fecha de Nacimiento" />
+      <Label layoutX="79.0" layoutY="583.0" text="Usuario" />
+      <TextField fx:id="txtUsuario" layoutX="79.0" layoutY="600.0" prefHeight="25.0" prefWidth="366.0" promptText="Ingrese un nombre de usuario" />
+      <Label layoutX="79.0" layoutY="633.0" text="Clave de acceso" />
+      <Label layoutX="79.0" layoutY="534.0" text="Direccion">
+         <font>
+            <Font name="Apple Braille" size="13.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtDireccion" layoutX="79.0" layoutY="551.0" prefHeight="25.0" prefWidth="366.0" promptText="Ingrese su dirección" />
+      <DatePicker fx:id="dateFechaNacimiento" layoutX="76.0" layoutY="499.0" prefHeight="26.0" prefWidth="366.0" promptText="Seleccione su fecha de vencimiento" />
+      <Button fx:id="btnCancelarEdicion" layoutX="76.0" layoutY="791.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="366.0" style="-fx-background-color: #AD2A2A;" text="Cancelar Edicion" textFill="WHITE" />
+      <Label layoutX="79.0" layoutY="685.0" text="Tipo de Cuenta" />
+      <ComboBox fx:id="BoxSeleccionarTipoCuenta" layoutX="79.0" layoutY="702.0" prefHeight="26.0" prefWidth="366.0" promptText="Seleccione el tipo de cuenta" />
+      <ImageView fx:id="imgUsuario" fitHeight="73.0" fitWidth="84.0" layoutX="223.0" layoutY="113.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@/img/PerfilDef.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="btnAdjuntarImagen" onAction="#adjuntarImagen" layoutX="209.0" layoutY="196.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="109.0" style="-fx-background-color: #001D51;" text="Editar Imagen" textFill="WHITE" />
+      <PasswordField fx:id="txtClavedeUsuario" layoutX="76.0" layoutY="653.0" prefHeight="26.0" prefWidth="366.0" promptText="Cree una clave de acceso" />
+   </children>
+</AnchorPane>

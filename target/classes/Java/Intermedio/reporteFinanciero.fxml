@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="289.0" prefWidth="520.0" style="-fx-background-color: #001D51;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vista.ReporteFinanciero">
+   <children>
+      <AnchorPane layoutY="-1.0" prefHeight="79.0" prefWidth="520.0" style="-fx-background-color: #FFFFFF;">
+         <children>
+            <ImageView fitHeight="94.0" fitWidth="113.0" layoutX="25.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@/img/logo_azul.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="185.0" layoutY="40.0" text="Reporte Financiero" textAlignment="CENTER">
+               <font>
+                  <Font name="Apple Braille" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Label layoutX="185.0" layoutY="39.0" textAlignment="CENTER">
+         <font>
+            <Font name="Apple Braille" size="18.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnGenerarReporte" layoutX="77.0" layoutY="159.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="366.0" style="-fx-background-color: #5084A6;" text="Generer Reporte" textFill="WHITE" />
+      <Button fx:id="btnCancelarReporte" layoutX="77.0" layoutY="202.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="366.0" style="-fx-background-color: #AD2A2A;" text="Cancelar Reporte" textFill="WHITE" />
+   </children>
+</AnchorPane>

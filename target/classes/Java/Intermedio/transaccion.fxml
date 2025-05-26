@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="vista.TransaccionController" prefHeight="450.0" prefWidth="520.0">
+   <children>
+      <AnchorPane prefHeight="82.0" prefWidth="520.0" style="-fx-background-color: #001D51;">
+         <children>
+            <ImageView fitHeight="94.0" fitWidth="113.0" layoutX="39.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@/img/logo_blanco.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="209.0" layoutY="35.0" prefHeight="25.0" prefWidth="102.0" text="Transaccion" textFill="WHITE">
+               <font>
+                  <Font name="Apple Braille" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+
+      <Label layoutX="37.0" layoutY="102.0" text="Tipo de Cuenta">
+         <font>
+            <Font name="Apple Braille" size="13.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="comboTipoCuenta" layoutX="37.0" layoutY="125.0" prefHeight="26.0" prefWidth="453.0" promptText="Seleccione el tipo de cuenta" />
+
+      <Label layoutX="37.0" layoutY="165.0" text="Destinatario">
+         <font>
+            <Font name="Apple Braille" size="13.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtDestinatario" layoutX="37.0" layoutY="188.0" prefHeight="26.0" prefWidth="453.0"
+                 promptText="Ingrese la identificación del destinatario (C.C.)" />
+
+      <Label layoutX="37.0" layoutY="228.0" text="Monto">
+         <font>
+            <Font name="Apple Braille" size="13.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtMonto" layoutX="37.0" layoutY="251.0" prefHeight="26.0" prefWidth="453.0"
+                 promptText="Ingrese el monto de la transacción" />
+
+      <Button fx:id="btnRealizarTransaccion" layoutX="69.0" layoutY="310.0" mnemonicParsing="false"
+              prefHeight="26.0" prefWidth="389.0" style="-fx-background-color: #001D51;"
+              text="Realizar Transacción" textFill="WHITE" onAction="#realizarTransaccion" />
+
+      <Button fx:id="btnCancelarTransaccion" layoutX="69.0" layoutY="350.0" mnemonicParsing="false"
+              prefHeight="26.0" prefWidth="389.0" style="-fx-background-color: #AD2A2A;"
+              text="Cancelar Transacción" textFill="WHITE" onAction="#cancelarTransaccion" />
+   </children>
+</AnchorPane>

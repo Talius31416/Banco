@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="303.0" prefWidth="520.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vista.Retiro">
+   <children>
+      <AnchorPane prefHeight="103.0" prefWidth="520.0" style="-fx-background-color: #001D51;">
+         <children>
+            <ImageView fitHeight="94.0" fitWidth="113.0" layoutX="25.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@/img/logo_blanco.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="236.0" layoutY="45.0" text="Retiro" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Apple Braille" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Button fx:id="btmRealizarRetiro" layoutX="89.0" layoutY="209.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="366.0" style="-fx-background-color: #001D51;" text="Realizar Retiro" textFill="WHITE" />
+      <Label layoutX="89.0" layoutY="139.0" text="Monto">
+         <font>
+            <Font name="Apple Braille" size="13.0" />
+         </font>
+      </Label>
+      <TextField fx:id="fltMontoRetiro" layoutX="89.0" layoutY="156.0" prefHeight="25.0" prefWidth="366.0" promptText="Ingrese la cantidad de su deposito" />
+      <Button fx:id="btnCancelarRetiro" layoutX="89.0" layoutY="249.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="366.0" style="-fx-background-color: #AD2A2A;" text="Cancelar Retiro" textFill="WHITE" />
+   </children>
+</AnchorPane>
