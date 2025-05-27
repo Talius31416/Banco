@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public class Cliente extends Persona {
     private String direccion;
     private TipoCuenta tipoCuenta;
-    boolean cuentaBloqueada;
+    private boolean cuentaBloqueada;
 
     public Cliente(String nombre, String apellido, String correo, String telefono, String CC, LocalDate fechaNacimiento, String direccion, TipoCuenta tipoCuenta, String usuario, String contrasenia, boolean cuentaBloqueada) {
         super(nombre, apellido, correo, telefono, CC, fechaNacimiento, usuario, contrasenia);
